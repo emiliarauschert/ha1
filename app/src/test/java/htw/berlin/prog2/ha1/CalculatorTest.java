@@ -90,5 +90,20 @@ class CalculatorTest {
 
 
     //TODO hier weitere Tests erstellen
+
+    //Aufgabe 1 (Test einer bestehenden Methode, welcher Grün wird)
+    @Test
+    @DisplayName("should clear screen if used")
+    void testPressClearKey(){
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(2);
+        calc.pressClearKey();
+
+        String expected = "0";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
 }
 
