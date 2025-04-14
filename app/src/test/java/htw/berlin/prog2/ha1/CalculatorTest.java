@@ -105,5 +105,22 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+
+    // Aufgabe 2.1 (Test, einer bestehenden Methode, welcher Rot wird)
+    @Test
+    @DisplayName("should not clear stored value on first clearKey press")
+    void testClearLatestValue() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(2);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(2);
+
+        calc.pressClearKey();
+
+        assertEquals("0", calc.readScreen());
+        assertEquals("2.0", Double.toString(calc.getLatestValue()));
+
+    }
 }
 
