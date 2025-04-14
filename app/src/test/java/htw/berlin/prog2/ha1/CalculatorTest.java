@@ -118,9 +118,25 @@ class CalculatorTest {
 
         calc.pressClearKey();
 
+        // keine vorherige Definition von expected und actual weil es jeweils zwei gibt
         assertEquals("0", calc.readScreen());
         assertEquals("2.0", Double.toString(calc.getLatestValue()));
+    }
 
+    // Aufgabe 2.2 (Test, einer bestehenden Methode, welcher Rot wird)
+    @Test
+    @DisplayName("should throw exeption when equals is pressed without a second operand")
+    void testEqualsWithoutSecondOperand() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(2);
+        calc.pressBinaryOperationKey("+");
+        calc.pressEqualsKey();
+
+        String expected = "Error";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
     }
 }
 
