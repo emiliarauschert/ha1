@@ -118,9 +118,10 @@ class CalculatorTest {
 
         calc.pressClearKey();
 
-        // keine vorherige Definition von expected und actual weil es jeweils zwei gibt
+        // keine vorherige Definition von expected und actual weil es jeweils drei gibt
         assertEquals("0", calc.readScreen());
         assertEquals("2.0", Double.toString(calc.getLatestValue()));
+        assertEquals("+", calc.getLatestOperation());
     }
 
     // Aufgabe 2.2 (Test, einer bestehenden Methode, welcher Rot wird)

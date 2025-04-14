@@ -14,8 +14,14 @@ public class Calculator {
 
     private String latestOperation = "";
 
+    private boolean isSreenClearedOnce = false;
+
     public double getLatestValue() {
         return latestValue;
+    }
+
+    public String getLatestOperation() {
+        return latestOperation;
     }
 
     /**
@@ -49,9 +55,15 @@ public class Calculator {
      * im Ursprungszustand ist.
      */
     public void pressClearKey() {
-        screen = "0";
-        latestOperation = "";
-        latestValue = 0.0;
+        if(!isSreenClearedOnce) {
+            screen = "0";
+            isSreenClearedOnce = true;
+        } else {
+            screen = "0";
+            latestOperation = "";
+            latestValue = 0;
+            isSreenClearedOnce = false;
+        }
     }
 
     /**
