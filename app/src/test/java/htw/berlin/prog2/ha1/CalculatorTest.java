@@ -88,7 +88,6 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
-
     //TODO hier weitere Tests erstellen
 
     //Aufgabe 1 (Test einer bestehenden Methode, welcher Grün wird)
